@@ -3,7 +3,8 @@
 	"displayName": "statusbar股票行情",
 	"description": "实时获取股票行情并显示在状态栏",
 	"publisher": "lwch",
-	"version": "0.0.1",
+	"icon": "imgs/icon.png",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.53.0"
 	},

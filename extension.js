@@ -1,6 +1,5 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-const { clear } = require('console');
 const vscode = require('vscode');
 const stock = require('./stock')
 
@@ -11,12 +10,15 @@ function activate(context) {
 	var hide = {};
 	var bars = {};
 	var cb = function(bar, obj) {
+		var icon = '';
 		if (obj.rate > 0) {
 			bar.color = 'red';
+			icon = '$(arrow-up) ';
 		} else if (obj.rate < 0) {
 			bar.color = 'lawngreen';
+			icon = '$(arrow-down) ';
 		}
-		bar.text = `${obj.name}: ${obj.current}  ${obj.rate}%`;
+		bar.text = `${icon}${obj.name}: ${obj.current}  ${obj.rate}%`;
 	}
 	var interval = vscode.workspace.getConfiguration('stock').get('interval');
 	if (!interval) interval = 1000;
@@ -36,6 +38,7 @@ function activate(context) {
 				})(stk);
 				bar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
 				bar.command = 'extension.statusbar-stock.off-'+stk;
+				bar.tooltip = 'hide';
 				bar.show();
 				context.subscriptions.push(bar);
 				bars[stk] = bar;
