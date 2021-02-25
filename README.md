@@ -2,7 +2,7 @@
 
 支持在状态栏显示指定股票行情
 
-![img](https://github.com/lwch/vscode-stock/raw/master/imgs/statusbar.png)
+![img](https://sm.ms/image/1PdsH4mfF9YTBWi)
 
 ## 配置
 
@@ -12,9 +12,9 @@
 >   * 股票代码支持json数组
 >   * 更新间隔时间需重启vscode
 >
-> ![img](https://github.com/lwch/vscode-stock/raw/master/imgs/config.png)
+> ![img](https://sm.ms/image/o7iNJTv6qk1buQy)
 >
-> ![img](https://github.com/lwch/vscode-stock/raw/master/imgs/config-code.png)
+> ![img](https://sm.ms/image/Y13XzEWbNpJeFPO)
 
 ## 隐藏股票
 
