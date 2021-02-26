@@ -4,7 +4,7 @@
 	"description": "实时获取股票行情并显示在状态栏",
 	"publisher": "lwch",
 	"icon": "imgs/icon.png",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
@@ -22,6 +22,16 @@
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [],
+		"keybindings": [
+			{
+				"command": "extension.statusbar-stock.hide-all",
+				"key": "ctrl+shift+h"
+			},
+			{
+				"command": "extension.statusbar-stock.show-all",
+				"key": "ctrl+shift+s"
+			}
+		],
 		"configuration": {
 			"title": "statusbar股票插件",
 			"properties": {

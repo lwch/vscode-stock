@@ -16,9 +16,11 @@
 >
 > ![img](https://raw.sevencdn.com/lwch/vscode-stock/master/imgs/config-code.png)
 
-## 隐藏股票
+## 隐藏显示
 
-在状态栏点击某支股票可隐藏该股票信息，暂`不支持`恢复，重启后可恢复原状态。
+1. 点击某只股票可隐藏该股票信息
+2. 使用快捷键`ctrl+shift+h`一键隐藏所有股票信息
+3. 使用快捷键`ctrl+shift+s`一键显示所有股票信息（可恢复点击隐藏的某支股票信息）
 
 ## TODO
 

@@ -20,6 +20,18 @@ function activate(context) {
 		}
 		bar.text = `${icon}${obj.name}: ${obj.current}  ${obj.rate}%`;
 	}
+	context.subscriptions.push(vscode.commands.registerCommand('extension.statusbar-stock.hide-all', function() {
+		for (var k in bars) {
+			bars[k].hide();
+			hide[k] = true;
+		}
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('extension.statusbar-stock.show-all', function() {
+		for (var k in bars) {
+			bars[k].show();
+			hide[k] = false;
+		}
+	}));
 	var interval = vscode.workspace.getConfiguration('stock').get('interval');
 	if (!interval) interval = 1000;
 	setInterval(function() {
@@ -32,7 +44,7 @@ function activate(context) {
 				(function(stk) {
 					var off = vscode.commands.registerCommand('extension.statusbar-stock.off-'+stk, function() {
 						hide[stk] = true;
-						bars[stk].dispose();
+						bars[stk].hide();
 					});
 					context.subscriptions.push(off);
 				})(stk);
