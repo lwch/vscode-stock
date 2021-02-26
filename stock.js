@@ -13,14 +13,29 @@ function get(id, bar, cb) {
         ret.on('end', function() {
             var data = content.substring(content.indexOf('="')+2);
             var col = data.split(',');
-            var obj = {
-                id:      id,
-                name:    col[0],
-                open:    col[1], // 今开
-                close:   col[2], // 昨收
-                current: col[3],
-                rate:    Math.round((col[3]-col[2]) / col[2] * 10000) / 100
+            var obj = {id: id};
+            switch (id.substring(0, 2)) {
+            case 'sh':
+            case 'sz':
+                obj.name    = col[0];
+                obj.open    = col[1]; // 今开
+                obj.close   = col[2]; // 昨收
+                obj.current = col[3];
+                break;
+            case 'hk':
+                obj.name    = col[1];
+                obj.open    = col[2];
+                obj.close   = col[3];
+                obj.current = col[6];
+                break;
+            case 'gb':
+                obj.name    = col[0];
+                obj.open    = col[5];
+                obj.close   = col[26];
+                obj.current = col[1];
+                break;
             }
+            obj.rate = Math.round((obj.current - obj.close) / obj.close * 10000) / 100
             cb(bar, obj);
         });
     });
