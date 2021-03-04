@@ -12,10 +12,10 @@ function activate(context) {
 	var cb = function(bar, obj) {
 		var icon = '';
 		if (obj.rate > 0) {
-			bar.color = 'red';
+			bar.color = vscode.workspace.getConfiguration('stock').get('color.up');
 			icon = '$(arrow-up) ';
 		} else if (obj.rate < 0) {
-			bar.color = 'lawngreen';
+			bar.color = vscode.workspace.getConfiguration('stock').get('color.down');
 			icon = '$(arrow-down) ';
 		}
 		bar.text = `${icon}${obj.name}: ${obj.current}  ${obj.rate}%`;

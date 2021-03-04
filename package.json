@@ -4,7 +4,7 @@
 	"description": "实时获取股票行情并显示在状态栏",
 	"publisher": "lwch",
 	"icon": "imgs/icon.png",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
@@ -47,6 +47,16 @@
 					"type": "number",
 					"default": 1000,
 					"description": "更新间隔"
+				},
+				"stock.color.up": {
+					"type": "string",
+					"default": "red",
+					"description": "上涨颜色"
+				},
+				"stock.color.down": {
+					"type": "string",
+					"default": "lawngreen",
+					"description": "下跌颜色"
 				}
 			}
 		}
