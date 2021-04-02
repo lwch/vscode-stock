@@ -16,6 +16,13 @@
 >
 > ![img](https://raw.sevencdn.com/lwch/vscode-stock/master/imgs/config-code.png)
 
+## 股票代号
+
+1. sh<代号>：上海交易所，如sh000001
+2. sz<代号>：深圳交易所，如sz399001
+3. hk<代号>：港股，如hk01810
+4. gb_<代号>：美股，如gb_aapl
+
 ## 隐藏显示
 
 1. 点击某只股票可隐藏该股票信息
