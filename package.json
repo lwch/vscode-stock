@@ -75,9 +75,7 @@
 		"glob": "^7.2.0",
 		"mocha": "^9.1.4",
 		"typescript": "^4.5.5",
-		"vscode-test": "^1.6.1"
-	},
-	"dependencies": {
+		"vscode-test": "^1.6.1",
 		"iconv-lite": "^0.6.3"
 	},
 	"repository": {
