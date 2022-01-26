@@ -73,17 +73,13 @@
 		"@types/vscode": "^1.53.0",
 		"eslint": "^8.7.0",
 		"glob": "^7.2.0",
+		"iconv-lite": "^0.6.3",
 		"mocha": "^9.1.4",
 		"typescript": "^4.5.5",
-		"vscode-test": "^1.6.1",
-		"iconv-lite": "^0.6.3"
+		"vscode-test": "^1.6.1"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/lwch/vscode-stock.git"
-	},
-	"dependencies": {
-		"vscode-test": "^1.6.1",
-		"iconv-lite": "^0.6.3"
 	}
 }
