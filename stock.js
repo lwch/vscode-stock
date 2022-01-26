@@ -1,8 +1,8 @@
-const http = require('http');
+const https = require('https');
 const iconv = require('iconv-lite');
 
 function get(id, bar, cb) {
-    http.get(`http://hq.sinajs.cn/list=${id}`, function(ret) {
+    https.get(`https://qt.gtimg.cn/q=${id}`, function(ret) {
         if (ret.statusCode != 200) {
             return;
         }
@@ -11,30 +11,16 @@ function get(id, bar, cb) {
             content += iconv.decode(data, 'gb2312');
         });
         ret.on('end', function() {
-            var data = content.substring(content.indexOf('="')+2);
-            var col = data.split(',');
-            var obj = {id: id};
-            switch (id.substring(0, 2)) {
-            case 'sh':
-            case 'sz':
-                obj.name    = col[0];
-                obj.open    = col[1]; // 今开
-                obj.close   = col[2]; // 昨收
-                obj.current = col[3];
-                break;
-            case 'hk':
-                obj.name    = col[1];
-                obj.open    = col[2];
-                obj.close   = col[3];
-                obj.current = col[6];
-                break;
-            case 'gb':
-                obj.name    = col[0];
-                obj.open    = col[5];
-                obj.close   = col[26];
-                obj.current = col[1];
-                break;
-            }
+            var row = content.split(";\n")[0];
+            var data = row.split('=')[1];
+            var params = data.replace('"', '').split('~');
+            var obj = {
+                id: id,
+                name:    params[1],
+                open:    params[5], // 今开
+                close:   params[4], // 昨收
+                current: params[3],
+            };
             obj.rate = Math.round((obj.current - obj.close) / obj.close * 10000) / 100
             cb(bar, obj);
         });
