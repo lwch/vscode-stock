@@ -4,7 +4,7 @@
 	"description": "实时获取股票行情并显示在状态栏",
 	"publisher": "lwch",
 	"icon": "imgs/icon.png",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
@@ -81,5 +81,9 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/lwch/vscode-stock.git"
+	},
+	"dependencies": {
+		"vscode-test": "^1.6.1",
+		"iconv-lite": "^0.6.3"
 	}
 }
